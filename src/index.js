@@ -16,4 +16,8 @@ app.listen(PORT,async ()=>{
     console.log(`server is running at port: ${PORT}`);
     await connect();
     console.log('mongo db connected');
+    const tweets = await Tweet.find({
+        content: ["First Tweet","Hii this is new tweet with some chages","123456"]
+    });
+    console.log(tweets);
 })
