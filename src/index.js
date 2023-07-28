@@ -17,9 +17,7 @@ app.listen(PORT,async ()=>{
     console.log(`server is running at port: ${PORT}`);
     await connect();
     console.log('mongo db connected');
-    let service = new TweetService();
-    const tweet =await service.create({
-        content: "i am #excited to start new #bat #cricket #life" 
-    });
-    console.log(tweet);
+    // let ser = new TweetService();
+    // const res = await ser.create({content: 'capital #FUN can you be #happyIIIII what #meaN'});
+    // console.log(res);
 });
