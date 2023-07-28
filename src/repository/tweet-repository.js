@@ -1,7 +1,12 @@
 const Tweet = require('../models/tweet');
+const CrudRepository = require('./crud-repository');
 
+class TweetRepository extends CrudRepository {
 
-class TweetRepository {
+    constructor(){
+        super(Tweet);
+    }
+
     async create(data){
         try {
             const tweet = await Tweet.create(data);
