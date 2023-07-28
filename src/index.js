@@ -33,6 +33,6 @@ app.listen(PORT,async ()=>{
     // const comment  = await Comment.create({content: 'second commit',userEmail: 'a@$c.com'});
     // tweet.comments.push(comment);
     // await tweet.save();
-    const tweet = await tweetrepo.getwithcomments('64c380214099b46bc90ae523');
-    console.log(tweet);
+    const tweet = await tweetrepo.getAll(4,2);
+    console.log(tweet[0].contentWithEmail);
 })
