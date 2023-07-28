@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const bodyParser = require('body-parser');
 
 const connect = require('./config/database');
 
@@ -9,15 +10,18 @@ const Comment = require('./models/comment');
 const {HashtagRepository,TweetRepository} = require('./repository/index');
 const TweetService = require('./services/tweet-service');
 
-const app = express();
+const apiRoutes = require('./routes/index.js');
 const PORT = process.env.PORT;
 
+const app = express();
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.use('/api', apiRoutes);
 
 app.listen(PORT,async ()=>{
     console.log(`server is running at port: ${PORT}`);
     await connect();
     console.log('mongo db connected');
-    // let ser = new TweetService();
-    // const res = await ser.create({content: 'capital #FUN can you be #happyIIIII what #meaN'});
-    // console.log(res);
+
 });
