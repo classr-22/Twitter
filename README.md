@@ -1,4 +1,4 @@
-#setup
+# setup
 
 - First execute this command `npm i`.
 
