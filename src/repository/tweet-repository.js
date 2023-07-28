@@ -1,5 +1,6 @@
 const Tweet = require('../models/tweet');
 
+
 class TweetRepository {
     async create(data){
         try {
@@ -35,6 +36,16 @@ class TweetRepository {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    async getwithcomments(tweetId){
+        try {
+            const tweet = await Tweet.findById(tweetId).populate({path: 'comments'});
+            return tweet;
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 }
 

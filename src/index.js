@@ -2,7 +2,9 @@ const express = require('express');
 require('dotenv').config();
 
 const connect = require('./config/database');
+
 const Tweet = require('./models/tweet');
+const Comment = require('./models/comment');
 
 const TweetRepository = require('./repository/tweet-repository');
 
@@ -26,9 +28,11 @@ app.listen(PORT,async ()=>{
     // console.log(tweet);
 
     const tweetrepo = new TweetRepository();
-    const tweet = await tweetrepo.create({content: 'Hii this is new tweet'});
-    console.log(tweet);
-    tweet.comments.push({content: 'first commit'});
-    await tweet.save();
+    // const tweet = await tweetrepo.create({content: 'Hii this is new tweet with some chages',userEmail:'a@$c.com'});
+    // //console.log(tweet);
+    // const comment  = await Comment.create({content: 'second commit',userEmail: 'a@$c.com'});
+    // tweet.comments.push(comment);
+    // await tweet.save();
+    const tweet = await tweetrepo.getwithcomments('64c380214099b46bc90ae523');
     console.log(tweet);
 })
