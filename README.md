@@ -1,7 +1,7 @@
 #setup
 
--first execute this command `npm i`
+- First execute this command `npm i`.
 
--create .env file and write mongoDB URL `DB_URL` and port number `PORT`
+- Create .env file and write mongoDB URL `DB_URL= mongodb://localhost:27017/<database>` and port number `PORT=<port_number>`.
 
--then execute `npm start` command
+- Then execute `npm start` command.
