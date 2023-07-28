@@ -17,7 +17,7 @@ app.listen(PORT,async ()=>{
     await connect();
     console.log('mongo db connected');
     // const tweet = await Tweet.create({
-    //     content: 'third Tweet'
+    //     content: 'third Tweet with hook'
     // });
     // const tweet = await Tweet.find({
     //     userEmail: 'a@b.com'
@@ -28,11 +28,11 @@ app.listen(PORT,async ()=>{
     // console.log(tweet);
 
     const tweetrepo = new TweetRepository();
-    // const tweet = await tweetrepo.create({content: 'Hii this is new tweet with some chages',userEmail:'a@$c.com'});
+    const tweet = await tweetrepo.create({content: 'new tweet with hooks',userEmail:'a@$c.com'});
     // //console.log(tweet);
     // const comment  = await Comment.create({content: 'second commit',userEmail: 'a@$c.com'});
     // tweet.comments.push(comment);
     // await tweet.save();
-    const tweet = await tweetrepo.getAll(4,2);
-    console.log(tweet[0].contentWithEmail);
+    //const tweet = await tweetrepo.getAll(4,2);
+    console.log(tweet);
 })
