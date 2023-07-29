@@ -4,14 +4,6 @@ const bodyParser = require('body-parser');
 
 const connect = require('./config/database');
 
-const Tweet = require('./models/tweet');
-const Comment = require('./models/comment');
-
-const {HashtagRepository,TweetRepository,UserRepository} = require('./repository/index');
-const TweetService = require('./services/tweet-service');
-
-const LikeService = require('./services/like-service');
-
 const apiRoutes = require('./routes/index.js');
 
 const PORT = process.env.PORT;
