@@ -27,11 +27,11 @@ app.listen(PORT,async ()=>{
     await connect();
     console.log('mongo db connected');
 
-    const userepo = new UserRepository();
-    const tweetrepo = new TweetRepository();
-    const tweets = await tweetrepo.getAll(10,0);
-    const user = await userepo.getAll();
-    const likeservice = new LikeService();
-    await likeservice.toggleLike(tweets[0].id,'Tweet',user[0].id);
+    // const userepo = new UserRepository();
+    // const tweetrepo = new TweetRepository();
+    // const tweets = await tweetrepo.getAll(10,0);
+    // const user = await userepo.getAll();
+    // const likeservice = new LikeService();
+    // await likeservice.toggleLike(tweets[0].id,'Tweet',user[0].id);
 
 });
