@@ -16,4 +16,4 @@ class LikeRespository extends CrudRepository {
     }
 }
 
-export default LikeRespository;
+module.exports = LikeRespository;
